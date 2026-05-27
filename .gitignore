@@ -1,0 +1,40 @@
+ai-ops-platform/
+├── services/
+│   └── api-gateway/                # main FastAPI app
+│       ├── app/
+│       │   ├── __init__.py
+│       │   ├── main.py
+│       │   ├── core/
+│       │   │   ├── config.py
+│       │   │   ├── database.py
+│       │   │   ├── security.py
+│       │   │   └── logging.py
+│       │   ├── models/
+│       │   │   ├── user.py
+│       │   │   └── incident.py
+│       │   ├── schemas/
+│       │   │   ├── user.py
+│       │   │   └── incident.py
+│       │   ├── api/
+│       │   │   ├── v1/
+│       │   │   │   ├── __init__.py
+│       │   │   │   ├── auth.py
+│       │   │   │   └── incidents.py
+│       │   │   └── deps.py
+│       │   └── tests/
+│       ├── requirements.txt
+│       └── Dockerfile
+├── shared/                         # common code across services
+│   ├── kafka/
+│   │   └── producer.py
+│   ├── database/
+│   │   └── session.py
+│   └── schemas/
+│       └── events.py
+├── infrastructure/
+│   ├── docker-compose.yml
+│   ├── .env.example
+│   └── scripts/
+│       └── init_db.sql
+├── .gitignore
+└── README.md
